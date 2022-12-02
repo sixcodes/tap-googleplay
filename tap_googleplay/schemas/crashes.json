@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string"
+    },
+    "package_name": {
+      "type": "string"
+    },
+    "device": {
+      "type": "string"
+    },
+    "daily_crashes": {
+      "type": "string"
+    },
+    "daily_anrs": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "date",
+    "package_name",
+    "device",
+    "daily_crashes",
+    "daily_anrs"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string"
+    },
+    "package_name": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "base_plan_id": {
+      "type": "string"
+    },
+    "offer_id": {
+      "type": "string"
+    },
+    "new_subscriptions": {
+      "type": "string"
+    },
+    "cancelled_subscriptions": {
+      "type": "string"
+    },
+    "active_subscriptions": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "date",
+    "package_name",
+    "product_id",
+    "country",
+    "new_subscriptions",
+    "cancelled_subscriptions",
+    "active_subscriptions"
+  ]
+}
