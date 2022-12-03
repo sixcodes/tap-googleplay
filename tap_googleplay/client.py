@@ -6,7 +6,7 @@ from zipfile import ZipFile
 
 import singer
 from google.cloud import storage
-
+import json
 LOGGER = singer.get_logger()
 
 REGEXP = r"([\w+]{3}\.\w+\.\w+\.[\w|\.\w]+[\d]{6})"
@@ -19,9 +19,8 @@ class GooglePlayClient:
     def __init__(self, config):
         self.start_date = config.get("start_date")
         self.bucket_name = config.get("bucket_name")
-        self.key_file = config.get("key_file")
-        self.bucket = storage.Client.from_service_account_json(
-            config.get("key_file")
+        self.bucket = storage.Client.from_service_account_info(
+            json.loads(config.get("key_file"))
         ).get_bucket(self.bucket_name)
 
     def get_report(self, report_key: str, filetype: str = "csv"):
