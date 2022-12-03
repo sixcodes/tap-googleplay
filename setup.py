@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name="tap-googleplay",
@@ -9,7 +9,7 @@ setup(
     author="Sixcodes Developers",
     url="https://github.com/sixcodes/tap-googleplay",
     classifiers=["Programming Language :: Python :: 3 :: Only"],
-    py_modules=["tap-googleplay"],
+    py_modules=["tap_googleplay"],
     install_requires=[
         "singer-python>=5.2.3",
         "google-api-python-client>=1.7.9",
@@ -20,7 +20,7 @@ setup(
           [console_scripts]
           tap-googleplay=tap_googleplay:main
       """,
-    packages=["tap_googleplay"],
+    packages=find_packages(),
     package_data={
         "tap_googleplay/schemas": [
             "installs.json",
