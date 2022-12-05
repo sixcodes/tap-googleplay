@@ -15,7 +15,6 @@ class GooglePlayClient:
     """
     The Google client
     """
-
     def __init__(self, config):
         self.start_date = config.get("start_date")
         self.bucket_name = config.get("bucket_name")

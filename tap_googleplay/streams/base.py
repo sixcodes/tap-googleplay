@@ -86,11 +86,11 @@ class GooglePlayBase:
                 bookmark = Tools.str_to_date(self.bookmark_date).replace(
                     tzinfo=pytz.UTC
                 )
-                # LOGGER.info((f"Package name: {package_name}", bookmark, delta, extraction_time))
+                LOGGER.info(f"Starting package : {package_name} sync")
                 while bookmark + delta <= extraction_time:
                     try:
                         iterator_str = bookmark.strftime("%Y%m")  # like 201906
-                        LOGGER.info(f"The iterator {iterator_str}")
+                        LOGGER.info(f"The iterator {iterator_str} on package: {package_name}")
                         # README: Neeed a condition for zip files, they have a different style
                         # report_key = f"sales/salesreport_{iterator_str}.zip"
                         report_key = f"{self.PREFIX}/{self.STREAM_NAME}/{self.STREAM_NAME}_{package_name}_{iterator_str}_{self.DIMENSION}.{self.FILETYPE}"
