@@ -103,9 +103,6 @@ class GooglePlayBase:
 
                     for entry in response:
                         new_bookmark_date = max(new_bookmark_date, entry["date"])
-                        entry["extracted_at"] = extraction_time.strftime(
-                            BOOKMARK_DATE_FORMAT
-                        )
                         singer.write_message(
                             singer.RecordMessage(
                                 stream=self.STREAM_NAME,
