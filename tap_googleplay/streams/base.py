@@ -99,7 +99,8 @@ class GooglePlayBase:
                         )
                     except FileNotFoundError as ex:
                         LOGGER.error(ex)
-                        break
+                        bookmark += delta
+                        continue
 
                     for entry in response:
                         new_bookmark_date = max(new_bookmark_date, entry["date"])
